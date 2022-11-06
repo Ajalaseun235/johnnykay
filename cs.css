@@ -1,0 +1,18 @@
+button:hover{border-color: rebeccapurple; -webkit-border-before-style:calc(10px/2px); background-color: red; border-radius: 5px;}
+input[type]{margin-top: 10px; border-radius: 20px; border: dotted darkolivegreen;}
+fieldset{width: fit-content;background-color: wheat;}
+input[type]:hover{border: solid blue;}
+form{}
+@media handheld and(min-width:100px) and (max-width:768px){
+    button:hover{border-color: rebeccapurple; -webkit-border-before-style:calc(10px/2px); background-color: red; border-radius: 5px;}
+input[type]{margin-top: 10px;border-radius: 20px; }
+fieldset{width: fit-content;background-color: wheat;}
+form{}
+input[type]:hover{border: solid blue;}
+:focus{border: solid chartreuse;}
+}
+:focus{border: solid chartreuse;}
+:visited{color: olivedrab; font-weight: bold;}
+.dtr{animation: rest 1s ease-in -8s infinite alternate; border-radius: 50px;  width: 100px; height: 100px;background-color: red; border-style: dotted;}
+    @keyframes rest {0%{background-color: red;top:0px;left: 0px;transform: rotate(360deg);} 30%{background-color: blanchedalmond;top:-10px;left: 10px;-moz-transform: rotate(360deg);}60%{background-color: indianred;bottom:0px;right: 0px;transform: rotate(360deg);} 70%{background-color: purple;bottom: 0px;left: 0px;top: 0px; right: 0px;transform: rotate(360deg);}100%{background-color: red;top:0px;left: 0px; bottom: 200px; right: 5px; transform: rotate(350deg);}
+        }

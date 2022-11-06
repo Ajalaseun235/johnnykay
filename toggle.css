@@ -1,0 +1,6 @@
+.toggle{position: relative;display: inline-block;width: 100px; height: 52px;background-color: red; border-radius: 30px; border: 2px solid grey; }
+.toggle:after{position: absolute; width: 50px; height: 50px; border-radius: 50%; background-color: grey; top: 1px; left: 1px; transition: all 0.5s; content: "";}
+p{font-family: Arial, Helvetica, sans-serif; font-weight: bold;}
+.checkbox:checked + .toggle::after{left: 49px;}
+.checkbox:checked + .toggle{background-color: green;}
+.checkbox{display: none;}

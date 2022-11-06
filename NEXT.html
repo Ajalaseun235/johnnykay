@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXT</title>
+    <link rel="stylesheet" href="cs.css">
+    <style>#div2{animation: rest 10s ease-in -1s infinite alternate; border-radius: 50px;  width: 100px; height: 100px;background-color: red;position: relative;}
+    @keyframes rest {0%{background-color: red;top:70px;left: 90px;}14%{background-color: orange;top: 300px;right: 150px;}25%{background-color: blue;bottom: 50px;left: 200px;}30%{background-color: maroon;bottom: 500px;right: 250px;}50%{background-color: green;top: 200px;left: 250px;}75%{background-color: brown;bottom: 300px;right: 500px;}88%{background-color: #ee23;right: 900px; top: 400px;} 100%{background-color: purple;bottom: 100px;right: 20px;}
+        }
+        #deal{animation: rest 2s ease-in -2s infinite alternate; border-radius: 50px;  width: 100px; height: 100px;background-color: darkcyan;}
+    @keyframes rest {0%{background-color: red;top:0px;left: 0px;}50%{background-color: green;top: 200px;left: 250px;}75%{background-color: brown;bottom: 300px;right: 500px;}88%{background-color: #ee23;right: 900px; top: 400px;} 100%{background-color: purple;bottom: 100px;right: 20px;}
+        }
+        
+       
+        .div1{animation: rest 10s ease-in-out -1s infinite alternate; position: relative;  width: 100px; height: 100px;background-color: rgb(0, 255, 149);position: relative;}
+@keyframes rest {0%{background-color: blue;bottom: -10px;right: 20px;}14%{background-color: red;bottom: 30px;left: 15px;}25%{background-color: orange;top: 300px;right: 150px;}30%{background-color: green;bottom: 80px;left: 120px;}50%{background-color: brown;top: 60px;right: 200px;}75%{background-color: magenta;top: 290px;left: 300px;} 90%{background-color: #45ffcc;left: 500px;bottom: 250px;}100%{background-color: purple;bottom: 100px;right: 20px;}
+}.div3{display: flex;}</style>
+<script>function mOver(obj){obj.innerHTML="Thank you! Then click me again"}function mDown(obj){obj.innerHTML="sss"}</script>
+       
+</head>
+<body>
+    <a href="toggle.html">toggle</a>
+    <div id="div2"></div>
+    <h1 id="hs"></h1>
+    <div id="deal"></div>
+    <script>document.getElementById("hs").innerHTML="This text is from innerHTML";</script>
+    <h3 id="hd"></h3>
+    <script>document.getElementById("hd").textContent="This text is from textContent";</script>
+ 
+
+    <h1>The window object</h1>
+    <h2>The prompt()method</h2>
+    <script>document.getElementById(p2).innerHTML="Tell us your favourite drink";</script>
+   
+    <form action="toggle.html" method="get">
+        <fieldset>
+        <label for="fname">FIRST NAME:</label>
+        <input type="text" name="" id="fname" autocomplete="username" autocapitalize="true" autofocus required><br>
+        <label for="lname">LAST NAME:</label>
+        <input type="text" name="" id="lname" required><br>
+        <label for="password">PASSWORD:</label>
+        <input type="password" name="password" id="security" required minlength="8" maxlength="20"><br>
+        <label for="number">PHONE NUMBER:</label>
+        <input type="number" name="number" id="" minlength="11" maxlength="14"><br>
+        <label for="email">EMAIL:
+        <input type="email" name="emal" id="Email" required></label><br>
+        <label for="date">DATE OF BIRTH</label>
+        <input type="date" name="date" id="date" required><br>
+        <label for="">YOUR FAVOURITE COLOR</label>
+        <input type="radio" id="color"name="fcolor" value="blue" checked>Blue
+        <input type="radio"id="color" name="fcolor"value="red">Red
+        <input type="radio"id="color"name="fcolor" value="green">Green <br>
+        <button onclick="myFunction()">Try it</button>
+        <p id="demo"></p>
+        <input type="submit" value="Log in"> <input type="reset" value="reset">
+    </fieldset>
+    </form>
+    <script>function myFunction() {let text; let favDrink=prompt("what's your favourite drink?", "cocacola");
+switch(favDrink){case "cocacola": text="Excellent choice";
+break; case "pepsi": text="pepsi is my favourite too";
+break; case "sprite": text="really?";
+break; default: text=arguments
+"i have never heard of that.";}document.getElementById("demo").innerHTML=text;}
+</script>
+<div class="div3">
+<div class="dtr"></div>
+<div class="dtr"></div>
+</div>
+<button onclick="window.confirm('did you wanna print this page?');print()">Print this page</button>
+<script>var x=2+4;console.log(x)</script>
+<h4>&#xf002;</h4>
+
+<div class="div1"></div>
+
+<div onmouseover="mOver(this)" onmousedown="mDown(this)" style="background-color: rebeccapurple; width: fit-content; height: fit-content; margin-bottom: 50px; margin-left: 100px;">Mouse Over Me!</div>
+
+
+
+</body>
+</html>
