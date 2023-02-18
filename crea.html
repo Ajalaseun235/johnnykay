@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>section{background-color: black;border-radius: 20px;}
+    .i{color: orange;font-family: 'Times New Roman', Times, serif;font-size: larger;font-weight: bold; font-style: normal;}
+    header{align-items: center; text-align: center; display: flex; flex-grow: 30px;gap: 20px; color: grey;}
+    #step1{margin-left: 30px; background: linear-gradient(to right,red, orange);}
+    #hi{letter-spacing: 3px;}
+    #step1,#step2,#step3,#step4{align-items: center;text-align: center;margin-left: 45px;}
+    input{border-style: none;background-color: black;color: white;margin-left: 20px;}
+    button{width: 100px;height: 40px;margin-left: 30px; border-radius: 50%;margin-bottom: 50px;margin-top: 20px; background: linear-gradient(to right,red, rgb(255, 38, 0),orange);}
+    #i{background-color: aliceblue;}
+    #he{color: white;}
+    #Submit{width: 100px;height: 40px;margin-left: 30px; border-radius: 50%;margin-bottom: 50px;margin-top: 20px; background: linear-gradient(to right,red, rgb(255, 38, 0),orange);}
+    input[type = submit]{border-style: solid;}
+    #section2, #section3, #section4{display: none;}
+    #line{width: auto;height: 5px;background-color: white;position: relative;}</style>
+    <link rel="stylesheet" href="medq.css">
+</head>
+<body>
+    <main style="background: #000;border-radius: 20px;margin-top: 20%; color: white;">
+    
+    <header>
+        <a href="#section1"><h4 id="step1">step1</h4></a>
+        <a href="#section2"><h4 id="step2">step2</h4></a>
+        <a href="#section3"><h4 id="step3">step3</h4></a>
+         <a href="#section4"><h4 id="step4">step4</h4></a> <br>
+        
+    </header>
+    
+        <div id="line"><span style="width: auto;height: 1px;position: absolute; background-color: blue;margin-top: auto;"></span></div>
+    
+        <section id="section1">
+    <article style="margin-top: 50px;text-align: center;">
+        <h1 id="hi">CREATE <i class="i">ACCOUNT</i></h1>
+    </article>
+    <form action="" method="post" style="margin-left: 10px;">
+    Email <input type="email" required name="mail" id="mail">
+    <hr>
+Password <input type="password" minlength="6" maxlength="30" required name="pas" id="pswd"><hr>
+Confirm Password <input type="password" minlength="6" maxlength="30" required name="cpas" id="cpswd"><hr>
+<button type="button" id="nxt1">Next</button>
+</form>
+    </section>
+
+    <div id="section2">
+    <article style="margin-top: 50px;margin-bottom: 30px;text-align: center;">
+        <div class="i">SOCIAL <span id="he">LINKS</span></div>
+    </article>
+    <form action="" method="post"style="margin-left: 10px;">
+    Whatsapp <input type="text" name="mal" id="Whatsapp">
+    <hr>
+Facebook<input type="text" name="face" id="Facebook"><hr>
+Youtube<input type="text" id="Youtube"><hr>
+<button type="button" id="bac" onclick="history.back('#section1');">Back</button><button type="button" id="nxt2">Next</button>
+</form>
+</div>
+
+<section id="section3">
+    <article style="margin-top: 50px;margin-bottom: 30px;text-align: center;">
+        <div id="he">PERSONAL <span class="i">INFO</span></div>
+    </article>
+    <form action="" method="post"style="margin-left: 10px;">
+    First name <input type="text" name="fnam" id="fname">
+    <hr>
+Last name<input type="text" name="lnam" id="lname"><hr>
+Mobile no.<input type="tel" id="num"><hr>
+<button type="button" id="bac">Back</button><button type="button" id="nxt3">Next</button>
+</form>
+</section>
+
+
+<section id="section4">
+    <article style="margin-top: 50px;margin-bottom: 30px;text-align: center;">
+        <div class="i">LOG<span id="he">IN</span></div>
+    </article>
+    <form action="http://facebook.com" method="post"style="margin-left: 10px; ">
+Mobile no.<input type="tel" id="num" style="margin-top: 20px;"><hr style="margin-bottom: 40px;">
+Password <input type="password" name="pas" id="pswd"><hr>
+<button type="button" id="bac">Back</button> <input type="submit" value="Submit" id="Submit">
+</form>
+</section>
+ 
+</main>
+</body>
+
+<script>document.getElementById("nxt1").onclick = function()
+{
+    let psw = document.getElementById("pswd");
+    let cpsw = document.getElementById("cpswd");
+    let pass = psw.value;
+    let len = cpsw.value;
+    if(pass != len){
+        alert("Password do not match");
+    }
+    else{
+        alert("Password match");
+    }
+    
+    if(document.getElementById("section2").style.display = "none"){
+    document.getElementById("section2").style.display ="block";
+    document.getElementById("section1").style.display ="none";
+}
+else{
+    document.getElementById("section1").style.display ="block";
+    document.getElementById("section2").style.display = "none";
+};}
+    
+</script>
+<script>
+    document.getElementById("nxt2").onclick = function()
+{
+    if(document.getElementById("section3").style.display = "none"){
+    document.getElementById("section3").style.display ="block";
+    document.getElementById("section2").style.display ="none";
+}
+else{
+    document.getElementById("section2").style.display ="block";
+    document.getElementById("section3").style.display = "none";
+}}
+</script>
+<script>
+ document.getElementById("nxt3").onclick = function()
+{
+    if(document.getElementById("section4").style.display = "none"){
+    document.getElementById("section4").style.display ="block";
+    document.getElementById("section3").style.display ="none";
+}
+else{
+    document.getElementById("section3").style.display ="block";
+    document.getElementById("section4").style.display = "none";
+}}
+</script>
+</html>
