@@ -1,0 +1,82 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:cursive, Serif;
+}
+body{
+    background:linear-gradient(to right bottom, #ea2c62, #52057b ) no-repeat;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.container{
+    padding:20px;
+    border-radius:5px;
+    background:#52057b;
+}
+h2{
+   margin-bottom:10px;
+   color:#fff;
+   font-size:20px; 
+}
+.form-control{
+    color:#fff;
+    border-bottom:1px solid #eee;
+    display:flex;
+    padding:10px 0;
+    justify-content:space-between;
+    align-items:center;
+}
+.form-control label{
+    cursor:pointer;
+}
+.p-header{
+    position:relative;
+}
+.p-header input{
+    width:100%;
+    height:100%;
+    border:none;
+    outline:none;
+    background:#ea2c62;
+    border-radius:5px;
+    color:#fff;
+    font-size:16px;
+    padding:14px;
+}
+.p-header button,
+.form-control input[type = number]{
+   outline:none;
+   border:none;
+   background:#eee;
+   padding:3px 5px;
+   border-radius:5px 0 0 0; 
+}
+.p-header button{
+ position:absolute;
+ bottom:0;
+ right:0;
+ cursor:pointer;   
+}
+#submit{
+  width:100%;  
+  padding:15px;
+  margin-top:10px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:18px;
+  outline:none;
+  border:none;
+  border-radius:5px;
+  color:#fff;
+  transition:all .3s;
+  background:#3282b8;
+}
+#submit:hover{
+   background:#ea2c02; 
+}
+#submit:active{
+   background:#3282b8; 
+}

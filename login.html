@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+        <style>
+               .sin{
+            display:flex;
+            position:relative;    
+            }
+            #crash, #fog{
+                word-break:break-all;
+           
+            }
+        </style>
+    <link rel="stylesheet" href="login.css">
+    <link rel="shortcut icon" href="pic4.png" type="image/x-icon">
+</head>
+<body>
+    <div class = "box">
+    <form  method="get" class = "form1">
+        <div class="imgcontainer">
+            <img src="a.webp" alt="a" class="avatar">
+        </div> 
+           
+        <h1 style="justify-content: center;align-items: center;text-align: center;">LOG IN</h1>
+        <div class="container">
+            <label for="uname"><b>Email or phone number</b></label>
+            <input type="text" oninput ="user()" autofocus = "on" id="Uname" name="uname" placeholder="Enter Email or Mobile number" required autocomplete="" accept = "tel">
+            <label for="psw"><strong>Password</strong></label>
+                <div class = "sin">
+            <input type="password" oninput = "security()" id="pass" minlength="8" name="psw" required placeholder="Enter password" autocomplete="current-password">
+                <input type="checkbox" onclick = "password()" id = "check" name="check">
+                    </div>
+            <button type="submit" onclick ="login()">Login</button><br>
+            <label><input type="checkbox" name="remember">Remember me</label>
+        </div>
+        <div class="containar" style="background-color: #f1f1f1;height: 20px; justify-content: space-between;display: flex;font-size:small;margin:10px;">
+            <a download = "true" target = "_self" id="crash" onclick = "create()">Create new account</a>
+            <a href="table.html" id = "fog">Forgotten password?</a>
+        </div>
+    </form>
+        </div>
+
+</body>
+<script>
+    function create(){
+        open("sign.html");
+           }
+    function user(){
+        console.log(document.getElementById("Uname").value);
+        }
+        function security(){
+        console.log(document.getElementById("pass").value);
+        }
+        //decode password
+        function password(){
+            let passw = document.getElementById("pass");
+            if(passw.type = "password"){
+               passw.type = "text"; 
+            }
+        }
+        function login(){
+        //localStorage.setItem('user',  `Email: ${document.getElementById("Uname").value}`);
+      //localStorage.setItem('pass',  `Password: ${document.getElementById("pass").value}`);
+     let uname = document.getElementById("Uname");
+     let pass = document.getElementById("pass");
+     let store =  localStorage.getItem('user');
+     let storex =  localStorage.getItem('pass');
+     if(store != uname.value || storex != pass.value){
+         alert("not found");
+         return true;
+     }
+     else{
+         return false;
+     }
+     document.write(store + '<br>' + storex);
+        }
+       
+</script>
+</html>

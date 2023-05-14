@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="description" content=""/>
+        <title>Color flipper </title>
+        <link rel="stylesheet" href="styles/colorflipper.css" type="text/css"/>
+        <script src = "scripts/colorflipper.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+        <div class = "nav">
+           <h2>Color flipper</h2> 
+       
+            <ul>
+  <li>
+      <a href = "#" onclick = "simpleFunc()">simple</a>
+  </li>
+  <li>
+    <a href = "#" class = "hexColor" onclick = "hexFunc()">hex</a>  
+  </li>
+ 
+</ul>   
+          
+        </div>
+            <div class = "container">
+                <div class = "simple">
+               <h2>Background Color: 
+               <span class = "text">white</span>
+                   </h2> 
+                   <button class = "changeColor" onclick = "changeColor()">click me</button>
+                 </div>
+                <div class = "hex" style = "display:none;">
+                    <h2>Background Color: 
+               <span class = "texts">#fff</span>
+                   </h2> 
+                   <button class = "changeColorHex" onclick = "changeColorHex()">click me</button>
+                </div>
+            </div>
+        <script>
+        </script>
+    </body>
+ </html>

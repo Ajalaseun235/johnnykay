@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="description" content=""/>
+        <title>validation</title>
+        <link rel="stylesheet" type="text/css" href="login.css">
+        <style>
+            body{
+                justify-content:center;
+                align-items:center;
+                display:flex;
+                min-height:100vh;
+                background:linear-gradient(45deg, grey, #fef);
+            }
+            .content{
+              //  display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+            p{
+               text-align:center;
+               background:radial-gradient(circle, red, orange, blue);
+               color:gold;
+               backdrop-filter:blur(20px);
+               font-weight:700;
+               font-size:xx-large; 
+            }
+            #verify{
+                animation:very 2s linear;
+                font-size:large;
+            }
+            @keyframes very{
+                0%{
+                  opacity:0;  
+                }
+                100%{
+                  opacity:1;  
+                 filter:hue-rotate(360deg);
+                }
+            }
+            h3{
+               animation:pop 4s linear;
+               background:linear-gradient(to right,red,blue,aqua,maroon );
+                -webkit-text-fill-color:transparent;
+                -webkit-background-clip:text;
+               text-align:center;
+               //transform:translateY(50px);
+            }
+            @keyframes pop{
+                0%{
+                   opacity:0;
+                   transform:translateY(-50px);
+                }
+                 100%{
+                   opacity:1;
+                   transform:translateY(0px);
+                }
+            }
+            h4{
+                background:linear-gradient(to right,red,blue,aqua,maroon );
+                -webkit-text-fill-color:transparent;
+                -webkit-background-clip:text;
+                animation: flip 2s linear infinite;
+            }
+            @keyframes flip{
+                0%{
+                   transform:scale(0.96);
+                }
+            100%{
+                   transform:scale(1);
+                }
+            }
+        </style>
+    </head>
+    <body >
+        <div class = "content">
+        <p id = "code"></p>
+       <h3>Welcome to the last stage.</h3>
+       <h4>Click on the button below to get your verification number </h4>
+        <input type="text" name="text_input" id = "verify">
+          <button type = "submit" onclick = "get()" id = "get">GET</button>
+              </div>
+        <script>
+     window.alert("Your code will be sent to you when you click on get");
+          
+        
+        function get(){
+            let rand = document.getElementById("code").innerHTML;
+            let very = document.getElementById("verify").value;
+         let randm= setTimeout(()=>{
+                let rand = Math.ceil(Math.random() * (10000 - 1) + 1);
+            console.log(rand);
+            document.getElementById("code").innerHTML = rand;
+            }, 3000);
+            
+       if(very == ""){
+            alert("Enter code sent to you, in some minutes");
+        }
+        else if( rand === very){
+            alert("correct, you're good to go");
+            open('login.html');
+        }
+        else{
+            alert("wrong, value is " + rand);
+      
+        }
+        }
+        </script>
+    </body>
+</html>

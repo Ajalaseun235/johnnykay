@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="login.css">
+        <style>
+            .sin{
+            display:flex;
+            position:relative;    
+            }
+            h4{
+             font-size:small;   
+            }
+          span{
+            position:absolute;
+            width:25px;
+            height:25px;
+            //animation:rotate 2s linear infinite;
+          transform:rotate(calc(60deg * var(--i)));
+        }
+ 
+        span:before{
+            position:absolute;
+            content:" ";
+            width:10px;
+            height:10px;
+            //top:0;
+          //  left:0;
+            border-radius:50%;
+            background:red;
+            
+            animation:rotate 2s linear infinite;
+            animation-delay:calc(0.2s * var(--i));
+        }
+        @keyframes rotate{
+          0%{
+              filter:hue-rotate(360deg);
+              transform:scale(0.7);
+          }  
+           50%{
+              filter:hue-rotate(240deg);
+              transform:scale(0.5);
+          }  
+          100%{
+              filter:hue-rotate(120deg);
+              transform:scale(0);
+          }  
+        }
+                button#signs{
+            display:none;
+        }
+       
+    .roll, .rol{
+        position:relative;
+        width:20px;
+        height:20px;
+       
+    }
+    .roll:before{
+        content:"";
+        position:absolute;
+        background-color:red;
+        width:10px;
+        height:10px;
+        border-radius:50%;
+    }
+     .roll:after{
+        content:"";
+        position:absolute;
+        background-color:red;
+        width:10px;
+        height:10px;
+        transform:translateX(20px);
+        border-radius:50%;
+    }
+     .rol:before{
+        content:"";
+        position:absolute;
+        background-color:red;
+        width:10px;
+        transform:translateY(15px);
+        height:10px;
+        border-radius:50%;
+    }
+     .rol:after{
+        content:"";
+        position:absolute;
+        background-color:red;
+        width:10px;
+        height:10px;
+        transform:translateX(20px) translateY(15px);
+        border-radius:50%;
+    }
+    i{
+        font-weight:800;
+        font-size:20px;
+        background-color:green;
+        font-style:normal;
+       width:50px;
+       height:50px;
+      border-radius:50%;
+      text-align:center;
+      position:fixed;
+      top:50%;
+      right:0;
+      box-shadow:3px 3px 10px red,
+                              -3px -3px 10px red;
+    }
+      
+        </style>
+    <link rel="shortcut icon" href="pic4.png" type="image/x-icon">
+</head>
+<body dir = "ltr">
+   
+    <div class = "boxes">
+    <form action = "valid.html" target = "_top" method="get"  class = "form2">
+        <div class="imgcontainer">
+            <img src="a.webp" alt="a" class="avatar">
+        </div>
+        <div class = "sin">
+        <h4 >Already have an account.</h4>
+         <input type="submit" onclick = "sign_in()" value="Sign in">
+         </div>
+        <h1 style="justify-content: center;align-items: center;text-align: center;">SIGN UP</h1>
+        <h4 id = "p" style = "text-align:center;color:red; margin:0;"></h4>
+        <div class="container" id = "top">
+            
+            <label for="uname"><b>Name</b></label>
+            <input type="text"  id="fname" name="uname" placeholder="First middle or last names" required autocomplete="username" >
+            <label for="email"><b>Enter email</b></label>
+            <input type="email"  id="email" name="mail" placeholder="Enter valid email address" required autocomplete="email">
+            <label for="uname"><b>Mobile number</b></label>
+            <input type="tel"  id="number" name="num" placeholder="Enter mobile number" required autocomplete="tel-country-code">
+            <label for="uname"><b>Date of birth</b></label>
+            <input type="date"  id="dob" name="dob" required autocomplete="bday-day">
+                <br>
+           
+            <label for="gender" id="sex" style="margin-left: 1%;"><b>Choose your gender</b></label><br>
+            <input type="radio"  id="male"  class = "sexs" placeholder="gender"  required autocomplete="sex" value = "Male">Male
+            <input type="radio"  id="female"  class = "sexs" placeholder="gender" required autocomplete="sex" value = "Female">Female
+            <input type="radio"  id="custom" class="sexs" placeholder="gender" required autocomplete="sex" value = "Custom">Custom <br><br>
+            <label for="psw"><strong>Password</strong></label>
+           <div id = "pas">
+            <input type="password" id="pass" minlength="8" class ="psw" required placeholder="Enter password" autocomplete="current-password">
+              <input type="checkbox" id = "check" name="check" onclick = "passwordShow()">   
+                </div>
+            <label for="cpsw"><strong>Confirm Password</strong></label>
+                <div id = "pas">
+            <input type="password" id="cpass" minlength="8" class="psw" required placeholder="Confirm password" autocomplete="current-password">
+              <input type="checkbox" class = "c-check" id = "c-check" name="check">   
+             </div>
+                <a href = "#accept" id = "bottom" onclick = "buttom()"><i class="arw" id = "bottom">&dArr;</i></a>
+                <a href = "#top" id = "top" onclick = "tup()" style = "display:none;"><i class="arw">&uArr;</i></a>
+              <button type="submit" id = "sign" onclick = "return sig()">Sign up</button>
+           <button type="submit" id = "signs"> loading
+          <!-- <span class = "roll"></span>
+            <span class = "rol"></span>-->
+                 <span style = "--i:0" ></span>
+              <span style = "--i:1"></span>
+              <span style = "--i:2" ></span>
+                <span style = "--i:3"></span>
+                <span style = "--i:4" ></span>
+                <span style = "--i:5" ></span>
+                   <span style = "--i:6" ></span>
+           </button><br>
+            <label><input type="checkbox" required = "true" name="remember" id = "accept">I accept terms and conditions</label>
+        </div>
+    </form>
+        </div>
+</body>
+    <script>
+        //
+        let tops = document.getElementById("top");
+        let bottoms = document.getElementById("bottom");
+        function buttom(){
+            if(bottoms.style.display = "block"){
+            tops.style.display = "block";
+            bottoms.style.display = "none";
+            }
+        else{
+            tops.style.display = "none";
+            bottoms.style.display = "block";
+        }
+        }
+         function tup(){
+             if(tops.style.display = "block")
+            tops.style.display = "none";
+            bottoms.style.display = "block";
+        }
+       //accept terms and conditions
+
+        function accept(){
+            let terms = document.getElementById("accept");
+            if(terms.checked){
+           console.log(terms)
+                return false;
+            }
+            else{
+                     alert("agree to our terms and conditions");
+                return true;
+            }
+        }
+        
+        //gender selection
+        function gender(){
+             let male = document.getElementById("male");
+              let custom = document.getElementById("custom");
+              let female = document.getElementById("female");
+              
+              if(male.checked){
+                  console.log("Male");
+                  }
+             else if(female.checked){
+                  console.log("Female");
+                  }
+                  else if(custom.checked){
+                      console.log("Custom");
+                      }
+                      else{
+                          console.log("none selected");
+                          }
+        }
+        
+        //decode password
+        function passwordShow_btn(){
+            let p_butt = document.getElementById('check');
+            let butt = document.getElementById('c-check');
+              if(p_butt.checked){
+                 butt.check;
+            
+              }
+              else{
+                  return true;
+              }
+        }
+        
+        function passwordShow(){  
+            let text = document.getElementById("pass");
+              let texted = document.getElementById("cpass");
+              passwordShow_btn();
+            if(text.type && texted.type === "password"){
+                text.type= "text";
+                texted.type= "text";
+                
+                }
+                else{
+                    text.type = "password";
+                    texted.type= "password";
+                    }
+                    }
+        
+          let name = document.getElementById("fname").value;
+        let mail = document.getElementById("email").value;
+        let fone = document.getElementById("number").value;
+        let dob = document.getElementById("dob").value;
+       
+                          //sign in button confirmation
+        function sig(){
+           let host = navigator.userAgent;
+            console.log(host);
+            //get age 18+
+            getNew();
+            //gender setup
+           gender();
+          //passwordMatch callback function
+           passwordMatch();
+             //agree to terms 
+              accept();  
+        
+ //change button detail
+         let sign = document.getElementById("sign");
+         let load_sign = document.getElementById("signs");
+            sign.style.display ='none';
+             load_sign.style.display='block';
+ 
+         
+     //   butt();   
+           
+         //to store details locally
+          localStorage.setItem('user',  `Name: ${document.getElementById("fname").value}`);
+        localStorage.setItem('pass',  `Password: ${document.getElementById("pass").value}`);
+        localStorage.setItem('mail',  `Email: ${document.getElementById("email").value}`);
+        localStorage.setItem('num',  `Number: ${document.getElementById("number").value}`);
+        localStorage.setItem('Dob',  `Date of birth: ${dob}`);
+        localStorage.setItem('sex',  `Gender: ${document.getElementsByClassName("sexs").value}`);
+        
+     let names =  localStorage.getItem('user');
+     let pass =  localStorage.getItem('pass');
+     let email =  localStorage.getItem('mail');
+     let num =  localStorage.getItem('num');
+     let dOb =  localStorage.getItem('Dob');
+     let sex =  localStorage.getItem('sex');
+            }
+          /*function butt(){
+         let sign = document.getElementById("sign");
+         let load_sign = document.getElementById("signs");
+         if(sig() === false){
+            sign.style.display ='none';
+             load_sign.style.display='block';
+             }
+        else{
+             sign.style.display ='block';
+             load_sign.style.display='none';
+        }
+         }   */
+         
+            //check passwordMatch
+            function passwordMatch(){
+                               
+            let paswrd= document.getElementById("pass");
+        let cpass= document.getElementById("cpass");
+        let danger = document.getElementById("p");
+  
+        if(paswrd.value === cpass.value){
+        // alert("password match");
+        return true;
+            }
+ 
+            else{
+                alert("password do not match");
+                danger.innerHTML = "password do not match";
+                return false;
+         }
+     
+            }
+            
+            
+            //chek age
+            function getNew(){
+                let day = document.getElementById("dob").value;
+            let dob = new Date(day);
+            let year = dob.getFullYear(day);
+            let ojo = dob.getDay(day);
+            let month = dob.getMonth(day);
+            console.log(year);
+            let dates = new Date();
+            let exactYr = dates.getFullYear();
+            let exactDay = dates.getDay();
+            let exactMnt = dates.getMonth();
+            let i = exactYr - year;
+            let j = exactDay - ojo;
+            let k = exactMnt - month;
+            console.log(exactYr);
+            if(i >= 18){
+                alert("you're 18+");
+                return true;
+            }
+         
+            else{
+               alert("you're under age. You`re " + i + "" + "years old"); 
+               return false;
+            }
+            }
+       //popup 
+            let pop = [
+              {
+                  'h1'   : "Welcome",
+                  'p' : "\t Did you need money?\n Tap the link below to earn money.\nif yes click the link"
+                 },
+                {
+                     a: "http://metroopinion.com",
+                 }
+            ]
+            console.log(pop[1].a );
+      setTimeout(function popUp(){
+  let space = document.createElement("div");
+  space.innerHTML = `${pop[0].h1} \n
+                                      ${pop[0].p}\n
+                                      "<a href=${pop[1].a}" >Click here</a>`
+         let release = window.confirm(space.innerHTML);
+ 
+                               
+}, 2000);
+//sign in
+           function sign_in(){
+               open("login.html");
+               }       
+      
+    </script>
+</html>

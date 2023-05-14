@@ -1,0 +1,244 @@
+form{border: 3px solid #f1f1f1;}
+input[type=text],
+input[type= tel],
+input[type= email], 
+input[type=password]{width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid grey;
+border-radius:20px;
+ outline:transparent; 
+ background:radial-gradient(gold, orange,yellow);
+ -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent; 
+  box-sizing: border-box;
+  transition:1s ease;
+  box-shadow:5px 5px 5px rgba(255, 150, 200, 0.5),
+                          -5px -5px 5px rgba(255, 150, 200, 0.5);
+  }
+  input[type=text]:hover,
+input[type= tel]:hover,
+input[type= email]:hover, 
+input[type=password]:hover{
+    border-color:green;
+    transform:translate(15px);
+    box-shadow:5px 5px 5px rgba(255, 150, 200, 0.5),
+                          -5px -5px 5px rgba(255, 150, 200, 0.5),
+                          -5px -5px 5px rgba(255, 150, 200, 0.5),
+                          5px 5px 5px rgba(255, 150, 200, 0.5);
+}
+button{background: #04AA6D;
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 100%;
+border-radius:20px;
+box-shadow:5px 5px 10px green,
+                        -5px -5px 10px green;
+}
+button:hover{
+    opacity: 0.5; 
+font-weight:700; 
+font-size: large;
+
+}
+
+input[type=checkbox],input[type=radio]{accent-color: black;}
+input[type=submit]{
+    position: absolute;
+    align-items: baseline;
+    border: none;
+    outline: none;
+    border-radius:20%;
+    
+    background:radial-gradient(rebeccapurple, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: large;
+    bottom: -30px;
+    right:35%;
+}
+input[type=submit]:hover{
+    text-decoration: underline;
+    transform: scale(90%);
+    transition: 2s ease-in-out;
+}
+
+.cancelbtn{width: auto;
+padding: 10px 18px;
+background: #f44336;
+}
+.imgcontainer{border:3px solid red; 
+text-align: center;
+margin: 24px 0 12px 0;
+ background:radial-gradient(circle,  gold,yellow, orange );
+ }
+img.avatar{width: 100%;
+border-radius: 50%; 
+animation:pop 2s linear infinite;
+}
+@keyframes pop{
+    0%{
+        transform:scale(90%, 100%);
+        }
+        100%{
+        transform:scale(100%, 90%);
+        }
+        }
+.container{padding: 16px;}
+.containar a{
+    position: relative;
+    text-decoration: none;
+    background: linear-gradient(red,maroon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+ .containar a::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #f44336;
+    left: 0;
+    bottom: -2px;
+    transform: scale(0);
+}
+.containar a:hover::after{
+    transition: 2s ease;
+    transform: scale(1);
+}
+h1{
+    background: radial-gradient(black,#fff, grey,gray);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation:move 3s linear;
+}
+#pas{
+    display:flex;
+    }
+    #check, #c-check{
+        justify-content:center;
+        align-items:center;
+        position:relative;
+        right:25px;
+        top:20px;
+      border-radius:20px;
+        }
+
+@keyframes move{
+    0%{
+        transform: translateX(-100px);
+        }
+        100%{
+            transform:translateX(0);
+            }
+            }
+         .box{
+            position:relative;
+            width:350px;
+            height:800px;
+            background:black;
+            border-radius:8px;
+            margin-top:30px;
+            overflow:hidden;
+            }
+            .box::before{
+                content:' ';
+                position:absolute;
+                top:-50%;
+                left:-50%;
+                width:350px;
+                height:800px;
+                transform-origin:bottom right;
+                background:blue;
+                
+                animation:animate 6s linear infinite;
+                }
+                .box::after{
+                content:' ';
+                position:absolute;
+                top:-50%;
+                left:-50%;
+                width:350px;
+                height:800px;
+                transform-origin:bottom right;
+                background:red;
+                z-index:1;
+                animation:animate 6s linear infinite;
+                animation-delay:-3s;
+                }
+                @keyframes animate{
+                    0%{
+                        transform:rotate(0deg);
+                        }
+                        100%{
+                            transform:rotate(360deg);
+                            }
+                            }
+            .box form{
+                position:absolute;
+                background-color:grey;
+                display:flex;
+                inset:10px;
+                z-index:2;
+                flex-direction:column;
+                border-radius:8px;
+                }   
+                
+              .boxes{
+                  top:0;
+            position:relative;
+            width:350px;
+            height:1130px;
+            background:black;
+            border-radius:8px;
+            margin-top:30px;
+            overflow:hidden;
+            }
+            .boxes::before{
+                content:' ';
+                position:absolute;
+                top:-50%;
+                left:-50%;
+                width:360px;
+                height:1130px;
+                transform-origin:bottom right;
+                background:blue;
+                z-index:1;
+                animation:animate 6s linear infinite;
+                }
+                .boxes::after{
+                content:' ';
+                position:absolute;
+                top:-50%;
+                left:-50%;
+                width:360px;
+                height:1130px;
+                transform-origin:bottom right;
+                background:red;
+                z-index:1;
+                animation:animate 6s linear infinite;
+                animation-delay:-3s;
+                }
+                     .boxes .form2{
+                position:absolute;
+                background-color:grey;
+                display:flex;
+                inset:10px;
+                z-index:2;
+                flex-direction:column;
+                border-radius:8px;
+                }   
+              
+      input::placeholder{
+          color:aqua;
+          font-style:oblique;
+          font-weight:300;
+          font-family:cursive;
+         font-size:large;
+         }
+        

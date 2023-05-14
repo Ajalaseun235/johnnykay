@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="description" content=""/>
+        <title>loader</title>
+        <style>
+        article{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background-color:wheat;
+            height:100vh;
+            width:100%;
+        }
+        div.load{
+            position:relative;
+            justify-content:center;
+            align-items:center;
+            display:flex;
+            width:120px;
+            height:120px;
+        }
+        span{
+            position:absolute;
+            width:55%;
+            height:55%;
+            //animation:rotate 2s linear infinite;
+          transform:rotate(calc(30deg * var(--i)));
+        }
+ 
+        span:before{
+            position:absolute;
+            content:" ";
+            width:15px;
+            height:15px;
+            //top:0;
+          //  left:0;
+            border-radius:50%;
+            background:red;
+            
+            animation:rotate 2s linear infinite;
+            animation-delay:calc(0.2s * var(--i));
+        }
+        @keyframes rotate{
+          0%{
+              filter:hue-rotate(360deg);
+              transform:scale(0.7);
+          }  
+           50%{
+              filter:hue-rotate(240deg);
+              transform:scale(0.5);
+          }  
+          100%{
+              filter:hue-rotate(120deg);
+              transform:scale(0);
+          }  
+        }
+        h1{
+       background:radial-gradient(red, maroon, blue);
+       -webkit-background-clip:text;
+       -webkit-text-fill-color:transparent;
+         animation: hue 3s linear infinite;
+          animation-duration:2s;
+          font-weight:700;
+          font-size:xx-large;
+          text-shadow:1px 1px brown,
+                                   2px 2px maroon,
+                                   3px 3px gold;
+              }  
+           @keyframes hue{
+          0%{
+              filter:hue-rotate(360deg);
+          }  
+           25%{
+              filter:hue-rotate(216deg);
+          }  
+           50%{
+              filter:hue-rotate(144deg);
+          }  
+          75%{
+              filter:hue-rotate(72deg);
+          }  
+          100%{
+              filter:hue-rotate(0deg);
+          }  
+        }
+        </style>
+    </head>
+    <body>
+        <article>
+            <div class = "load">
+                <span style = "--i:0" ></span>
+              <span style = "--i:1"></span>
+              <span style = "--i:2" ></span>
+                <span style = "--i:3"></span>
+                <span style = "--i:4" ></span>
+                <span style = "--i:5" ></span>
+                   <span style = "--i:6" ></span>
+                <span style = "--i:7" ></span>
+              <span style = "--i:8" ></span>
+                <span style = "--i:9" ></span>
+                <span style = "--i:10" ></span>
+                <span style = "--i:11" ></span>
+                   <span style = "--i:12" ></span>
+                <h1 >G</h1>
+            </div>
+                
+        </article>
+
+        <script>
+alert("please, wait some minutes....\nloading page content ")
+window.onload = function(){
+    setTimeout(load_login, 200);
+    }
+function load_login(){
+    alert("Haffa");
+   open("login.html");
+};
+
+        </script>
+    </body>
+</html>
